@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11/01HW</title>   
+    <br>
+</head>
+    <script>
+        function dectoBinary() 
+        { 
+            var a = document.getElementById("10to2").value;
+            var b = null
+            var c = 2;
+            var arr = [];
+                while( c != 0)
+            {  
+                b = a % 2;
+                c = parseInt(a / 2);
+                a = c
+                arr.push(b);  
+            }
+                return arr.reverse().join("").toString(2); 
+        } 
+        function onBtnClkSubmit()
+        { 
+            let input =  document.getElementById("10to2").value;
+            document.getElementById("result").innerHTML = dectoBinary(input); 
+        }
+    </script>
+<body>
+    <label>please input a whole number</label><br></br> 
+    <input type ="text" id ="10to2" name = "10to2"><br></br>
+    <p id="result">decimal_to_binary</p>
+    <button id="button" type="button" onclick="onBtnClkSubmit()">result</button>
+</body>
+</html>
